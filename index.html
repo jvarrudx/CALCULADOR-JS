@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Simples</title>
+  <style>
+    body {
+      font-family: Arial;
+      display: flex;
+      margin: 20px;
+    }
+
+    .calculadora {
+      background: #f0f0f0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-right: 20px;
+    }
+
+    #visor {
+      width: 100%;
+      height: 40px;
+      font-size: 24px;
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    .tecla {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      background-color: gray;
+      color: black;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .tecla:hover {
+      background-color: blue;
+    }
+
+    .tecla:active {
+      background-color: yellow;
+      color: red;
+    }
+
+    .historico {
+      background: #fafafa;
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 200px;
+      font-size: 14px;
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="calculadora">
+    <input type="text" id="visor" readonly>
+
+    
+    <div>
+      <button class="tecla" onclick="limparVisor()">CE</button>
+      <button class="tecla" onclick="limparTudo()">C</button>
+      <button class="tecla" onclick="backspace()">←</button>
+      <button class="tecla" onclick="digitar('+')">+</button>
+    </div>
+
+    
+    <div>
+      <button class="tecla" onclick="digitar('1')">1</button>
+      <button class="tecla" onclick="digitar('2')">2</button>
+      <button class="tecla" onclick="digitar('3')">3</button>
+      <button class="tecla" onclick="digitar('-')">-</button>
+    </div>
+
+    
+    <div>
+      <button class="tecla" onclick="digitar('4')">4</button>
+      <button class="tecla" onclick="digitar('5')">5</button>
+      <button class="tecla" onclick="digitar('6')">6</button>
+      <button class="tecla" onclick="digitar('*')">*</button>
+    </div>
+
+    
+    <div>
+      <button class="tecla" onclick="digitar('7')">7</button>
+      <button class="tecla" onclick="digitar('8')">8</button>
+      <button class="tecla" onclick="digitar('9')">9</button>
+      <button class="tecla" onclick="digitar('/')">/</button>
+    </div>
+
+    
+    <div>
+      <button class="tecla" onclick="mostrarHistorico()">H</button>
+      <button class="tecla" onclick="digitar('0')">0</button>
+      <button class="tecla" onclick="digitar('.')">,</button>
+      <button class="tecla" onclick="calcular()">=</button>
+    </div>
+  </div>
+
+  <div class="historico">
+    <strong>Histórico:</strong>
+    <div id="historico"></div>
+  </div>
+
+</body>
+</html>
